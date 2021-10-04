@@ -6,8 +6,10 @@ const Duration = ({
   setFocusDuration,
   breakDuration,
   setBreakDuration,
-  isTimerRunning
+  isTimerRunning,
+  paused
 }) => {
+  console.log(paused)
   const handleFocusIncrease = () => {
     setFocusDuration((focusDuration) => focusDuration + 5);
   };
@@ -34,7 +36,7 @@ const Duration = ({
               className="btn btn-secondary"
               data-testid="decrease-focus"
               onClick={handleFocusDecrease}
-              disabled={focusDuration < 6 || isTimerRunning}
+              disabled={focusDuration < 6 || isTimerRunning || paused}
             >
               <span className="oi oi-minus" />
             </button>
@@ -43,7 +45,7 @@ const Duration = ({
               className="btn btn-secondary"
               data-testid="increase-focus"
               onClick={handleFocusIncrease}
-              disabled={focusDuration > 59 || isTimerRunning}
+              disabled={focusDuration > 59 || isTimerRunning || paused}
             >
               <span className="oi oi-plus" />
             </button>
@@ -62,7 +64,7 @@ const Duration = ({
                 className="btn btn-secondary"
                 data-testid="decrease-break"
                 onClick={handleBreakDecrease}
-                disabled={breakDuration < 2 || isTimerRunning}
+                disabled={breakDuration < 2 || isTimerRunning || paused}
               >
                 <span className="oi oi-minus" />
               </button>
@@ -71,7 +73,7 @@ const Duration = ({
                 className="btn btn-secondary"
                 data-testid="increase-break"
                 onClick={handleBreakIncrease}
-                disabled={breakDuration > 14 || isTimerRunning}
+                disabled={breakDuration > 14 || isTimerRunning || paused}
               >
                 <span className="oi oi-plus" />
               </button>

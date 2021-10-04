@@ -56,6 +56,7 @@ function Pomodoro() {
   const [session, setSession] = useState(null);
   const [focusDuration, setFocusDuration] = useState(25);
   const [breakDuration, setBreakDuration] = useState(5);
+  const [paused, setPaused] = useState(false);
 
   useInterval(
     () => {
@@ -78,6 +79,7 @@ function Pomodoro() {
         breakDuration={breakDuration}
         setBreakDuration={setBreakDuration}
         isTimerRunning={isTimerRunning}
+        paused={paused}
       />
 
       {/* PLAY/PAUSE & STOP BUTTONS */}
@@ -87,6 +89,8 @@ function Pomodoro() {
         session={session}
         setSession={setSession}
         focusDuration={focusDuration}
+        paused={paused}
+        setPaused={setPaused}
       />
 
       {/* FOCUSING TIME DISPLAY AND PROGRESS BAR */}
