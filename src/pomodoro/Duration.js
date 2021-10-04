@@ -9,7 +9,6 @@ const Duration = ({
   isTimerRunning,
   paused
 }) => {
-  console.log(paused)
   const handleFocusIncrease = () => {
     setFocusDuration((focusDuration) => focusDuration + 5);
   };
