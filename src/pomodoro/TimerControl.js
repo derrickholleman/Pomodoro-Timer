@@ -34,6 +34,7 @@ const TimerControl = ({
   const handleStopSession = () => {
     setIsTimerRunning(false);
     setSession(null);
+    setPaused(false)
   };
 
   return (
