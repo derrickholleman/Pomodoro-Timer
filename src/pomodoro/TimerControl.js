@@ -6,7 +6,6 @@ const TimerControl = ({
   setIsTimerRunning,
   setSession,
   focusDuration,
-  paused,
   setPaused
 }) => {
   function playPause() {

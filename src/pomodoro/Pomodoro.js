@@ -58,8 +58,6 @@ function Pomodoro() {
   const [breakDuration, setBreakDuration] = useState(5);
   const [paused, setPaused] = useState(false);
 
-  console.log(paused)
-
   useInterval(
     () => {
       if (session.timeRemaining === 0) {
