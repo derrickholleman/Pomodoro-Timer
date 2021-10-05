@@ -5,6 +5,7 @@ const TimerControl = ({
   isTimerRunning,
   setIsTimerRunning,
   setSession,
+  session,
   focusDuration,
   setPaused
 }) => {
@@ -65,7 +66,7 @@ const TimerControl = ({
             data-testid="stop"
             title="Stop the session"
             onClick={handleStopSession}
-            disabled={!isTimerRunning}
+            disabled={!session}
           >
             <span className="oi oi-media-stop" />
           </button>
