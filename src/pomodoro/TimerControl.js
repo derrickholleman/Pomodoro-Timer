@@ -11,7 +11,6 @@ const TimerControl = ({
 }) => {
   function playPause() {
     setIsTimerRunning((prevState) => {
-      setPaused(true)
       const nextState = !prevState;
       if (nextState) {
         setSession((prevStateSession) => {
@@ -23,7 +22,6 @@ const TimerControl = ({
               timeRemaining: focusDuration * 60,
             };
           }
-          setPaused(false)
           return prevStateSession;
         });
       }
@@ -34,7 +32,6 @@ const TimerControl = ({
   const handleStopSession = () => {
     setIsTimerRunning(false);
     setSession(null);
-    setPaused(false)
   };
 
   return (
